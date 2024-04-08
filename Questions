@@ -1,0 +1,45 @@
+/*Project: SortingHat 
+*Author: Yelena Martinez
+*Date: 4/8/2024
+*This class determines which Hogwarts house a person belongs to based on their answers to a series of questions. */
+
+public class Questions {
+    private String house;
+    private int answer;
+
+    /*
+     * Constructs a Question object with the specified house and answer.
+     */
+    public Questions(String house, int answer) {
+        this.house = house;
+        this.answer = answer;
+    }
+
+    /*
+     * Retrieves the house associated with the question.
+     */
+    public String getHouse() {
+        return house;
+    }
+
+    /*
+     * Sets the house associated with the question.
+     */
+    public void setHouse(String house) {
+        this.house = house;
+    }
+
+    /*
+     * Retrieves the user's answer to the question.
+     */
+    public int getAnswer() {
+        return answer;
+    }
+
+    /*
+     * Sets the user's answer to the question.
+     */
+    public void setAnswer(int answer) {
+        this.answer = answer;
+    }
+}
