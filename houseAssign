@@ -6,5 +6,41 @@ public class SortingHat {
  * Date: 4/8/2024
  * Description: Sorting hat algorithm to determine Hogwarts House for the user
 */
-
+    // Method for sorting users based on answers
+    public String sortUser(Question[] questions) {
+        int[] housePoints = new int[4] // 0Gryffindor, 1Hufflepuff, 2Ravenclaw, 3Slytherin
+        // Loop through the questions
+        for (Question question : questions) {
+            int answer = question.getAnswer(); // Get the user's answer
+            switch (question.getHouse()) { // Determine which house the question belongs to
+                case "Gryffindor":
+                    housePoints[0] += answer; // Gryffindor
+                    break;
+                case "Hufflepuff":
+                    housePoints[1] += answer; // Hufflepuff
+                    break;
+                case "Ravenclaw":
+                    housePoints[2] += answer; // Ravenclaw
+                    break;
+                case "Slytherin":
+                    housePoints[3] += answer; // Slytherine
+                    break;
+        }
+    }
+        // Determine house with highest score
+        // Still to do
+        // Return House that user belongs to
+            switch (points) {
+            case 0:
+                return "Gryffindor";
+            case 1:
+                return "Hufflepuff";
+            case 2:
+                return "Ravenclaw";
+            case 3:
+                return "Slytherin";
+            default:
+                return "Unknown";
+    }
+  }
 }
