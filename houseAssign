@@ -1,1 +1,10 @@
+import java.util.Scanner;
 
+public class SortingHat {
+/* Project Name: SortingHat
+ * Author: Spencer Dant
+ * Date: 4/8/2024
+ * Description: Sorting hat algorithm to determine Hogwarts House for the user
+*/
+
+}
