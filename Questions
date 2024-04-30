@@ -1,45 +1,48 @@
 /*Project: SortingHat 
 *Author: Yelena Martinez
-*Date: 4/8/2024
-*This class determines which Hogwarts house a person belongs to based on their answers to a series of questions. */
+*Date: 4/8/2024 - 4/30/2024
+*This class helps determines which Hogwarts house a person belongs to based on their inputs to a series of questions. */
+
+import java.util.Scanner;
 
 public class Questions {
+    private String question;
+    private String[] choices;
     private String house;
-    private int answer;
 
-    /*
-     * Constructs a Question object with the specified house and answer.
-     */
-    public Questions(String house, int answer) {
+    public Questions(String question, String[] choices, String house) {
+        this.question = question;
+        this.choices = choices;
         this.house = house;
-        this.answer = answer;
     }
 
-    /*
-     * Retrieves the house associated with the question.
-     */
+    public int getAnswer() {
+        // Create a new Scanner object to read user input from the console
+        Scanner scanner = new Scanner(System.in);
+
+        // Display the question to the user
+        System.out.println(question);
+
+        // Display the choices to the user
+        for (int i = 0; i < choices.length; i++) {
+            System.out.println((i + 1) + ". " + choices[i]);
+        }
+
+        // Prompt the user to enter their choice
+        System.out.print("Enter your choice (1-" + choices.length + "): ");
+        int answer = scanner.nextInt();
+
+        // Validate the user's input
+        while (answer < 1 || answer > choices.length) {
+            // If the input is invalid, print an error message and prompt the user again
+            System.out.print("Invalid choice, please enter a number between 1 and " + choices.length + ": ");
+            answer = scanner.nextInt();
+        }
+
+        return answer - 1;
+    }
+
     public String getHouse() {
         return house;
-    }
-
-    /*
-     * Sets the house associated with the question.
-     */
-    public void setHouse(String house) {
-        this.house = house;
-    }
-
-    /*
-     * Retrieves the user's answer to the question.
-     */
-    public int getAnswer() {
-        return answer;
-    }
-
-    /*
-     * Sets the user's answer to the question.
-     */
-    public void setAnswer(int answer) {
-        this.answer = answer;
     }
 }
