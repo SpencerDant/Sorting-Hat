@@ -1,0 +1,40 @@
+/*Project: SortingHat 
+*Author: Christina Daluge
+*Date: 4/8/2024 - 5/01/2024
+*The main class. This file was uploaded by Yelena due to technical difficulties encountered by Christina during the uploading process.*/
+
+import java.util.Scanner;
+
+public class sortingHat {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to Hogwarts! We will ask you a few questions to determine which house suits you best.");
+
+        // Create instances of the Questions class for each question
+        Questions question1 = new Questions("Which trait is most important to you?", new String[]{"Wisdom", "Ambition", "Integrity", "Kindness"}, "Ravenclaw");
+        Questions question2 = new Questions("What interests you the most in the wizarding world?", new String[]{"Learning new and fascinating things", "Overcoming challenges and achieving victories", "Making ethical and honest decisions", "Helping others and building social connections"}, "Slytherin");
+        Questions question3 = new Questions("What do you prefer?", new String[]{"Reading a book quietly in the library", "Facing a group of challenges and coming out victorious", "Making straightforward and honest decisions", "Helping others and developing social connections"}, "Gryffindor");
+
+        // Ask each question and retrieve the user's answer
+        int answer1 = question1.getAnswer();
+        int answer2 = question2.getAnswer();
+        int answer3 = question3.getAnswer();
+
+        String house = "";
+
+        if (answer1 == 0) {
+            house = question1.getHouse();
+        } else if (answer2 == 0) {
+            house = question2.getHouse();
+        } else if (answer3 == 0) {
+            house = question3.getHouse();
+        } else {
+            house = "Hufflepuff";
+        }
+
+        System.out.println(house);
+
+        scanner.close();
+    }
+}
